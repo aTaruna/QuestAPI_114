@@ -26,7 +26,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.act8_localrestapi.R
 import com.example.act8_localrestapi.modeldata.DetailSiswa
 import com.example.act8_localrestapi.modeldata.UIStateSiswa
-import com.example.act8_localrestapi.uicontroller.DestinasiEntry
+import com.example.act8_localrestapi.uicontroller.route.DestinasiEntry
 import com.example.act8_localrestapi.viewmodel.EntryViewModel
 import com.example.act8_localrestapi.viewmodel.provider.PenyediaViewModel
 import kotlinx.coroutines.launch

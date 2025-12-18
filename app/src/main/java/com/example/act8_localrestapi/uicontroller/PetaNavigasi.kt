@@ -7,6 +7,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.act8_localrestapi.uicontroller.route.DestinasiEntry
+import com.example.act8_localrestapi.uicontroller.route.DestinasiHome
 import com.example.act8_localrestapi.view.EntrySiswaScreen
 import com.example.act8_localrestapi.view.HomeScreen
 

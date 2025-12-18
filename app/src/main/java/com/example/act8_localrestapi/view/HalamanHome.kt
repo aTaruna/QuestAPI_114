@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.act8_localrestapi.R
 import com.example.act8_localrestapi.modeldata.DataSiswa
-import com.example.act8_localrestapi.uicontroller.DestinasiHome
+import com.example.act8_localrestapi.uicontroller.route.DestinasiHome
 import com.example.act8_localrestapi.viewmodel.HomeViewModel
 import com.example.act8_localrestapi.viewmodel.StatusUiSiswa
 import com.example.act8_localrestapi.viewmodel.provider.PenyediaViewModel
