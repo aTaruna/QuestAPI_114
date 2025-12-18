@@ -6,7 +6,9 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.act8_localrestapi.modeldata.DetailSiswa
 import com.example.act8_localrestapi.modeldata.UIStateSiswa
+import com.example.act8_localrestapi.modeldata.toDataSiswa
 import com.example.act8_localrestapi.repositori.RepositoriDataSiswa
+import retrofit2.Response
 
 class EntryViewModel (private val repositoriDataSiswa: RepositoriDataSiswa):
         ViewModel() {
@@ -20,5 +22,16 @@ class EntryViewModel (private val repositoriDataSiswa: RepositoriDataSiswa):
     }
     fun updateUiState(detailSiswa: DetailSiswa){
         uiStateSiswa = UIStateSiswa(detailSiswa = detailSiswa, isEntryValid = validasiInput(detailSiswa))
+    }
+
+    suspend fun addSiswa(){
+        if(validasiInput()){
+            val sip: Response<Void> = repositoriDataSiswa.postDataSiswa(uiStateSiswa.detailSiswa.toDataSiswa())
+            if(sip.isSuccessful){
+                println("Berhasil Tambah Data : ${sip.message()}")
+            }else{
+                println("Gagal Tambah Data : ${sip.errorBody()}")
+            }
+        }
     }
 }
