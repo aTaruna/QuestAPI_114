@@ -32,7 +32,7 @@ class HomeViewModel(private val repositoriDataSiswa : RepositoriDataSiswa) : Vie
                 StatusUiSiswa.Error
             }
             catch (e: HttpException){
-                StatusUiSiswa.Error 
+                StatusUiSiswa.Error
             }
         }
     }
