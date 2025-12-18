@@ -9,6 +9,7 @@ import com.example.act8_localrestapi.modeldata.DataSiswa
 import com.example.act8_localrestapi.repositori.RepositoriDataSiswa
 import kotlinx.coroutines.launch
 import okio.IOException
+import retrofit2.HttpException
 
 sealed interface StatusUiSiswa {
     data class Success(val siswa: List<DataSiswa> = listOf()) : StatusUiSiswa
@@ -29,6 +30,9 @@ class HomeViewModel(private val repositoriDataSiswa : RepositoriDataSiswa) : Vie
                 StatusUiSiswa.Success(repositoriDataSiswa.getDataSiswa())
             } catch (e: IOException) {
                 StatusUiSiswa.Error
+            }
+            catch (e: HttpException){
+                StatusUiSiswa.Error 
             }
         }
     }
