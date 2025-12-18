@@ -125,3 +125,58 @@ fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
         }
     }
 }
+@Composable
+fun DaftarSiswa(
+    itemSiswa : List<DataSiswa>,
+    onSiswaClick: (DataSiswa) -> Unit,
+    modifier: Modifier = Modifier
+){
+    LazyColumn(modifier = Modifier) {
+        items(items = itemSiswa, key = {it.id}){
+                person ->
+            ItemSiswa(
+                siswa = person,
+                modifier = Modifier
+                    .padding(dimensionResource(id = R.dimen.padding_small))
+                    .clickable { onSiswaClick (person) }
+            )
+        }
+    }
+}
+@Composable
+fun ItemSiswa (
+    siswa: DataSiswa,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large)),
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small))
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = siswa.nama,
+                    style = MaterialTheme.typography.titleLarge,
+                )
+                Spacer(Modifier.weight(1f))
+                Icon(
+                    imageVector = Icons.Default.Phone,
+                    contentDescription = null,
+                )
+                Text(
+                    text = siswa.telepon,
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
+            Text(
+                text = siswa.alamat,
+                style = MaterialTheme.typography.titleMedium
+            )
+        }
+    }
+}
