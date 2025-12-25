@@ -14,6 +14,7 @@ import com.example.act8_localrestapi.uicontroller.route.DestinasiHome
 import com.example.act8_localrestapi.view.DetailSiswaScreen
 import com.example.act8_localrestapi.view.EntrySiswaScreen
 import com.example.act8_localrestapi.view.HomeScreen
+import com.example.myroomsiswa.view.route.DestinasiDetail
 
 @Composable
 fun DataSiswaApp(navController: NavHostController = rememberNavController(), modifier: Modifier)
@@ -34,7 +35,8 @@ fun HostNavigasi(
         composable (DestinasiEntry.route){
             EntrySiswaScreen(navigateBack = {navController.navigate(DestinasiHome.route)})
         }
-        composable (DestinasiDetail.routeWithArgs,arguments = listOf(navArgument(DestinasiDetail.itemIdArg)
+        composable (
+            DestinasiDetail.routeWithArgs,arguments = listOf(navArgument(DestinasiDetail.itemIdArg)
         {
             type = NavType.IntType
         })

@@ -8,6 +8,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.act8_localrestapi.modeldata.DataSiswa
+import com.example.myroomsiswa.view.route.DestinasiDetail
 import kotlinx.coroutines.launch
 import okio.IOException
 import retrofit2.HttpException
